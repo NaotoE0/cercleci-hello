@@ -8,3 +8,13 @@ jobs:
       - run: echo "hello world" # run the `echo` command
       - run: pwd
       - run: ls -a
+      - run:
+          name: Creating dummy Artifacsts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+
+      - store_artifacsts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+          
+          
